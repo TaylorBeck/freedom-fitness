@@ -1,0 +1,17 @@
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+
+  .title {
+    margin: 10px 0;
+  }
+
+  .alert {
+    margin: 5px;
+    text-align: center;
+    color: white;
+    background-color: #ff9966;
+    border-radius: 5px;
+  }
+}
