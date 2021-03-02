@@ -1,8 +1,9 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import './footer.styles.scss';
 
-const Footer = () => {
+const Footer = ({ history }) => {
   const currentYear = new Date().getFullYear();
   return (
     <div className='footer'>
@@ -11,20 +12,20 @@ const Footer = () => {
       </div>
       <div className='legal-links'>
         <div className='link'>
-          <p>Terms of Service</p>   
+          <p onClick={() => history.push('/terms-of-service')}>Terms of Service</p>   
         </div>
         <div className='link'>
-          <p>Privacy Policy</p>
+          <p onClick={() => history.push('/privacy-policy')}>Privacy Policy</p>
         </div>
         <div className='link'>
           <p>Shipping Policy</p>
         </div>
         <div className='link'>
-          <p>Returns & Refund Policy</p>
+          <p onClick={() => history.push('/return-refund-policy')}>Return & Refund Policy</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Footer;
+export default withRouter(Footer);
