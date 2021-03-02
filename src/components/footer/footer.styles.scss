@@ -1,0 +1,21 @@
+.footer {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid lightgray;
+  margin-top: 20px;
+
+  .legal-links {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .link {
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+  }
+}
