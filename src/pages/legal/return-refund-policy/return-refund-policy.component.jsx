@@ -1,0 +1,16 @@
+import React from 'react';
+
+const ReturnRefundPolicy = () => (
+  <div className='return-refund-policy'>
+    <h2>Return & Refund Policy</h2>
+    <p>If you are not happy with your purchase, we will accept a return of a unused product within 7 days. Once we receive the returned item FreedomFit will then give a full refund (excluding shipping as we are unable to refund the initial shipping cost of your order).</p>
+    <p>Please allow 2 weeks for your return to be processed.</p>
+    <p>Discounted items are not eligible for a return.</p>
+    <p>FreedomFit will not issue refunds for products purchased through other entities, such as distributors or retail partners.</p>
+    <p>Returned items must be delivered to us unused, in original packaging and in the condition they were received or may not be eligible for refund or be subject to a restocking fee. We cannot be held responsible for items damaged or lost in return shipment, therefore we recommend an insured and trackable mail service.</p>
+    <p>We are unable to issue a refund without actual receipt of the item(s) or proof of received return delivery.</p>
+    <p>We aim to accept all returns. In the unlikely event that an item is returned to us in an unsuitable condition, we may have to send it back to you. All goods will be inspected on return.</p>
+  </div>
+);
+
+export default ReturnRefundPolicy;
