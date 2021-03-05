@@ -15,6 +15,7 @@ import Footer from './components/footer/footer.component';
 
 import TermsOfService from './pages/legal/terms-of-service/terms-of-service.component';
 import PrivacyPolicy from './pages/legal/privacy-policy/privacy-policy.component';
+import ShippingPolicy from './pages/legal/shipping-policy/shipping-policy.component';
 import ReturnRefundPolicy from './pages/legal/return-refund-policy/return-refund-policy.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
@@ -70,6 +71,7 @@ class App extends React.Component {
           />
           <Route exact path='/terms-of-service' component={TermsOfService} />
           <Route exact path='/privacy-policy' component={PrivacyPolicy} />
+          <Route exact path='/shipping-policy' component={ShippingPolicy} />
           <Route exact path='/return-refund-policy' component={ReturnRefundPolicy} />
         </Switch>
         <Footer />
