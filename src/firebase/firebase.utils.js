@@ -40,6 +40,22 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userReference;
 };
 
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const transformedCollection = collections.docs.map(doc => {
+    // doc is the documentSnapshot. You must call data() on document snapshots
+    const { title, items } = doc.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items
+    }
+  });
+
+  console.log(transformedCollection);
+}
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
