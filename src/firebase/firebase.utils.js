@@ -40,6 +40,28 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userReference;
 };
 
+// Convert firebase snapshot into frontend usable collection object
+// Firebase is not storing our routeName within the collection, so we must add it
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const transformedCollection = collections.docs.map(doc => {
+    // doc is the documentSnapshot. You must call data() on document snapshots
+    const { title, items } = doc.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items
+    }
+  });
+
+  // Returns object with each collection as values - keys are 'hats', 'jackets', ...
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
+}
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
