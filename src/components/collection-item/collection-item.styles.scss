@@ -21,6 +21,10 @@
     position: absolute;
     top: 255px;
     display: none;
+
+    &:active {
+      background-color: darkgray;
+    }
   }
 
   &:hover {

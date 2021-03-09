@@ -9,7 +9,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const githubLink = 'https://github.com/TaylorBeck/freedom-fitness';
   return (
-    <div className='footer'>
+    <div className='footer do-not-print'>
       <div className='copyright'>
         <span>&copy; {currentYear} Freedom Fit. All Rights Reserved.</span>
       </div>

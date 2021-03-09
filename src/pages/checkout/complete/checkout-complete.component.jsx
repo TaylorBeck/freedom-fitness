@@ -13,11 +13,11 @@ const CheckoutCompletePage = (props) => {
 
   return (
     <div className='checkout-complete-container'>
-      <h1>Thank you, {card.name}!</h1>
-      <h2>Your order is now complete.</h2>
-      <h3>Order #{stripeToken.created} - Total Price: ${price.toFixed(2)}</h3>
+      <h1>Order #{stripeToken.created}</h1>
+      <h2>Thank you, {card.name}! Your order is now complete.</h2>
+      <h3>Total Price: ${price.toFixed(2)}</h3>
       <p>You will receive your package by <strong>{deliveryDate.toDateString()}</strong>.</p>
-      <p>Please <button onClick={handlePrint}>print</button> this page for your records.</p>
+      <p className='do-not-print'>Please <button onClick={handlePrint}>print</button> this page for your records.</p>
     </div>
   );
 };
