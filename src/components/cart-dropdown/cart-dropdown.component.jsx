@@ -16,6 +16,9 @@ import './cart-dropdown.styles.scss';
 // connect from react-redux includes dispatch in component props
 const CartDropdown = ({ cartItems, history, dispatch }) => (
   <div className='cart-dropdown'>
+    <div className='close-cart-container'>
+      <button className='close' onClick={() => dispatch(toggleCartHidden())}>&times;</button>
+    </div>
     <div className='cart-items'>
       {cartItems.length ? (
         // Cart is NOT empty, display items
