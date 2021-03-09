@@ -14,7 +14,7 @@ const Footer = () => {
         <Link className='link' to='/terms-of-service'>Terms of Service</Link>
         <Link className='link' to='/privacy-policy'>Privacy Policy</Link>
         <Link className='link' to='/shipping-policy'>Shipping Policy</Link>
-        <Link className='link' to='/return-refund-policy'>Return & Refund Policy</Link>
+        <Link className='link' to='/return-refund-policy'>Return Policy</Link>
       </div>
     </div>
   );
