@@ -22,3 +22,13 @@ export const selectShopCollection = memoize(collectionUrlParam => {
     collections ? collections[collectionUrlParam] : null
   );
 });
+
+export const selectIsCollectionsFetching = createSelector(
+  [selectShop],
+  shop => shop.isFetching
+);
+
+export const selectIsCollectionsLoaded = createSelector(
+  [selectShop],
+  shop => !!shop.collections // bang operator twice returns boolean representation
+);
