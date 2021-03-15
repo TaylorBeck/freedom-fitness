@@ -9,6 +9,10 @@
   .copyright {
     width: 40%;
     padding: 10px 0;
+
+    @media screen and (max-width: 800px) {
+      width: 60%;
+    }
   }
   
   .socials-container {
@@ -16,6 +20,10 @@
     padding: 10px 0;
     display: flex;
     justify-content: center;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
 
   .legal-links {
@@ -32,6 +40,11 @@
       &:hover {
         color: darkgray;
       }
+    }
+
+    @media screen and (max-width: 800px) {
+      flex-wrap: wrap;
+      width: 40%;
     }
   }
 }
