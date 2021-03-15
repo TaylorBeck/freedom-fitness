@@ -4,16 +4,23 @@ const defaultButtonStyles = css`
   background-color: black;
   color: white;
   border: none;
-
-  &:hover {
+  
+  &:active {
     background-color: white;
     color: black;
-    border: 1px solid black;
   }
 
-  &:active {
-    background-color: black;
-    color: white;
+  @media screen and (min-width: 600px) {
+    &:hover {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+    }
+
+    &:active {
+      background-color: black;
+      color: white;
+    }
   }
 `;
 
@@ -22,15 +29,22 @@ const invertedButtonStyles = css`
   color: black;
   border: 1px solid black;
 
-  &:hover {
+  &:active {
     background-color: black;
     color: white;
-    border: none;
   }
 
-  &:active {
-    background-color: white;
-    color: black;
+  @media screen and (min-width: 600px) {
+    &:hover {
+      background-color: black;
+      color: white;
+      border: none;
+    }
+
+    &:active {
+      background-color: white;
+      color: black;
+    }
   }
 `;
 
