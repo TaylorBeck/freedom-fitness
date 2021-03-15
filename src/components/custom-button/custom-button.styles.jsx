@@ -10,6 +10,11 @@ const defaultButtonStyles = css`
     color: black;
     border: 1px solid black;
   }
+
+  &:active {
+    background-color: black;
+    color: white;
+  }
 `;
 
 const invertedButtonStyles = css`
@@ -21,6 +26,11 @@ const invertedButtonStyles = css`
     background-color: black;
     color: white;
     border: none;
+  }
+
+  &:active {
+    background-color: white;
+    color: black;
   }
 `;
 
