@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import StripeCheckout from 'react-stripe-checkout';
 
-import { clearAllItemsFromCart } from '../../redux/cart/cart.actions';
+import { clearCart } from '../../redux/cart/cart.actions';
 
-const StripeCheckoutButton = ({ price, match, history, clearAllItemsFromCart }) => {
+const StripeCheckoutButton = ({ price, match, history, clearCart }) => {
   const priceForStripe = price * 100; // Stripe takes the USD price amount in cents
   const publishableKey = 'pk_test_3hjpLOVYQu3Sv3woQzNZYPJK00PFuGJnye';
 
@@ -21,7 +21,7 @@ const StripeCheckoutButton = ({ price, match, history, clearAllItemsFromCart }) 
       deliveryDate
     };
 
-    clearAllItemsFromCart();
+    clearCart();
     history.push(`${match.url}/complete`, checkoutState);
   }
 
@@ -42,7 +42,7 @@ const StripeCheckoutButton = ({ price, match, history, clearAllItemsFromCart }) 
 };
 
 const mapDispatchToProps = dispatch => ({
-  clearAllItemsFromCart: () => dispatch(clearAllItemsFromCart())
+  clearCart: () => dispatch(clearCart())
 });
 
 export default connect(null, mapDispatchToProps)(withRouter(StripeCheckoutButton));
