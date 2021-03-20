@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -23,42 +23,39 @@ import CheckoutCompletePage from './pages/checkout/complete/checkout-complete.co
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 
-class App extends React.Component {
-  componentDidMount() {
-    const { checkUserSession } = this.props;
+const App = ({ checkUserSession, currentUser }) => {
+  useEffect(() => {
     checkUserSession();
-  }
+  }, [checkUserSession]);
 
-  render() {
-    return (
-      <div>
-        <GlobalStyle />
-        <Header />
-        <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={ShopPage} />
-          <Route exact path='/checkout' component={CheckoutPage} />
-          <Route exact path='/checkout/complete' component={CheckoutCompletePage} />
-          <Route
-            exact
-            path='/signin'
-            render={() =>
-              this.props.currentUser ? (
-                <Redirect to='/' />
-              ) : (
-                <SignInAndSignUpPage />
-              )
-            }
-          />
-          <Route exact path='/terms-of-service' component={TermsOfService} />
-          <Route exact path='/privacy-policy' component={PrivacyPolicy} />
-          <Route exact path='/shipping-policy' component={ShippingPolicy} />
-          <Route exact path='/return-refund-policy' component={ReturnRefundPolicy} />
-        </Switch>
-        <Footer />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <GlobalStyle />
+      <Header />
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route path='/shop' component={ShopPage} />
+        <Route exact path='/checkout' component={CheckoutPage} />
+        <Route exact path='/checkout/complete' component={CheckoutCompletePage} />
+        <Route
+          exact
+          path='/signin'
+          render={() =>
+            currentUser ? (
+              <Redirect to='/' />
+            ) : (
+              <SignInAndSignUpPage />
+            )
+          }
+        />
+        <Route exact path='/terms-of-service' component={TermsOfService} />
+        <Route exact path='/privacy-policy' component={PrivacyPolicy} />
+        <Route exact path='/shipping-policy' component={ShippingPolicy} />
+        <Route exact path='/return-refund-policy' component={ReturnRefundPolicy} />
+      </Switch>
+      <Footer />
+    </div>
+  );
 }
 
 const mapStateToProps = createStructuredSelector({
