@@ -4,8 +4,8 @@ import './checkout-complete.styles.scss';
 
 const CheckoutCompletePage = (props) => {
   const checkoutState = props.location.state;
-  const { stripeToken, price, deliveryDate } = checkoutState;
-  const { card } = stripeToken;
+  const { token, price, deliveryDate } = checkoutState;
+  const { card } = token;
 
   const handlePrint = () => {
     window.print();
@@ -13,7 +13,7 @@ const CheckoutCompletePage = (props) => {
 
   return (
     <div className='checkout-complete-container'>
-      <h1>Order #{stripeToken.created}</h1>
+      <h1>Order #{token.created}</h1>
       <h2>Thank you, {card.name}! Your order is now complete.</h2>
       <h3>Total Price: ${price.toFixed(2)}</h3>
       <p>You will receive your package by <strong>{deliveryDate.toDateString()}</strong>.</p>
