@@ -6,9 +6,9 @@
     "npm": "6.13.4"
   },
   "scripts": {
-    "client": "cd client && yarn install && yarn start",
+    "client": "cd client && yarn start",
     "server": "nodemon server.js",
-    "build": "cd client && npm run build",
+    "build": "cd client && yarn install && npm run build",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "start": "node server.js"
   },
